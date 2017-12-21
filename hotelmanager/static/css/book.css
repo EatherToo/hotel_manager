@@ -35,14 +35,6 @@
     border: #9a2423;
 }
 
-#kind{
-    width: 80%;
-    height: 144px;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,0.5);
-    position: relative;
-    top:75px;
-}
 #result{
     width: 80%;
     margin: 0 auto;

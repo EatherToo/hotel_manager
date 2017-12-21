@@ -36,7 +36,6 @@
     <p>入住时间：<input id="f_ctime"/></p>
     <p>离开时间：<input id="f_ltime"/></p>
     <p>入住状态：
-     <!---   <input id="f_statu"/>--->
      <select id="f_statu">
         <option value ="pre">未入住</option>
       <option value ="ing">已入住</option>
@@ -44,6 +43,27 @@
      </select>
     </p>
     <p>房&nbsp;&nbsp;间&nbsp;&nbsp;号：<input id="f_room_id"/></p>
+</div>
+<div id="add_staff" style="display:none">
+    <input style="left: 20px;top: 150px;" type="button" id="add_staff_yes" value="确认"/><input style="top: 150px;right: 20px;" type="button" id="add_staff_no" value="取消"/>
+    <p style="margin-top: 45px;">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input id="sta_id"/></p>
+    <p style="margin-top: 45px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input id="sta_pwd" type="password"/></p>
+    <p style="margin-top: 45px;">权&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：
+     <select id="staff_auth">
+        <option value ="high">高级</option>
+      <option value ="normal">普通</option>
+     </select>
+    </p>
+</div>
+<div id="recognize">
+    <p>账号：<input id="staff_id"/></p>
+    <p>密码：<input id="staff_pwd" type="password"/></p>
+    <input id="rec_yes" type="button" value="确认"/><input id="rec_no" type="button" value="取消"/>
+</div>
+<div id="recognize2">
+    <p>账号：<input id="staff_id2"/></p>
+    <p>密码：<input id="staff_pwd2" type="password"/></p>
+    <input id="rec_yes2" type="button" value="确认"/><input id="rec_no2" type="button" value="取消"/>
 </div>
 <div style="background:url(../../static/img/left.jpg) ;height: 960px;width: 1600px;margin: 0 auto">
     <div id = "index_left">
@@ -120,7 +140,8 @@
                 <div><span>离开日期：</span><input id="end" /></div>
                 <div><input type="button" id="get_room" style="width: 100px;height: 36px;"value="搜索"/></div>
                 <div style="width: 50%;"><span>房&nbsp;&nbsp;间&nbsp;&nbsp;号：<input style="height: 60%" id="room_id"/></span><input type="button" id="get_room_by_id" style="margin-left:70px;width: 100px;height: 36px;"value="搜索"/></div>
-                <div style="width: 50%;"><input type="button" id="update_room" style="margin-left:70px;width: 200px;height: 36px;"value="修改房间信息"/></div>
+                <div style="width: 18%;"><input type="button" id="update_room" style="margin-left:40px;width: 140px;height: 36px;"value="修改房间信息"/></div>
+                <div style="width: 18%;"><input type="button" id="update_staff" style="margin-left:40px;width: 140px;height: 36px;"value="添加职员账号"/></div>
             </div>
             <div id="room_book" style="overflow: auto">
                 <p  style="font-size: 1.6em;font-weight: bold;color: black;margin-left: 90px">查询结果：</p>

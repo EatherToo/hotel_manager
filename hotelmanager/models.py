@@ -183,7 +183,7 @@ class Room(models.Model):
 
 
 class Staff(models.Model):
-    sta_id = models.AutoField(primary_key=True)
+    sta_id = models.CharField(primary_key=True,max_length=20)
     sta_authority = models.CharField(max_length=6, blank=True, null=True)
     sta_passward = models.CharField(max_length=20, blank=True, null=True)
 

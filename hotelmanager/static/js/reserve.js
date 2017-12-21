@@ -31,11 +31,12 @@ $(document).ready(function() {
                 form.attr('method','post');
                 form.attr('target','_self');
                 $("body").append(form);
-                var price = $("#all_price > span").text();
+                var price = $("#all_price").text();
+                alert(price);
                 var input1 = $('<input type="text" name="price" />');
                 input1.attr("value",price);
                 form.append(input1);
-                var num = $("#r_num > span").text();
+                var num = $("#r_num").text();
                 var input2 = $('<input type="text" name="num"/>');
                 input2.attr("value",num);
                 form.append(input2);

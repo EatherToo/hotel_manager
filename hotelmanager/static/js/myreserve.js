@@ -40,6 +40,7 @@ $(document).ready(function () {
         $("#my_reserve").toggle();
         $("#back").toggle();
     });
+
     var check_id;
     $(document).on("click","#check_item > tbody > tr",function(){
         check_id = $(this).children("td:eq(0)").text();

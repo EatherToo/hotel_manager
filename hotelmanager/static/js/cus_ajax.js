@@ -261,10 +261,11 @@ $(document).on("click","#reserve_item>tbody>tr",function(){
                 $("#blur").show();
 
         });
+
         $("#no").click(function () {
             $("#float").hide();
             $("#blur").hide();
-        })
+        });
         $("#yes").click(function () {
             var name = $("#f_name").val();
             var phone = $("#f_phone").val();
@@ -378,9 +379,32 @@ $(document).on("click","#reserve_item>tbody>tr",function(){
 
         });
         $("#update_room").click(function () {
-            $("#room_update").show();
+            $("#blur").show();
+            $("#recognize2").show();
+        });
+        $("#rec_yes2").click(function () {
+            $.post("check_staff",{staff_id:$("#staff_id2").val(),staff_pwd:$("#staff_pwd2").val()},function (data) {
+                if(data["info"]==1)
+                {
+                    $("#recognize2").hide();
+                    $("#room_update").show();
+                }
+                else if(data["info"]==2)
+                {
+                    alert("没有权限进行操作！")
+                }
+                else
+                {
+                    alert("账户或密码错误！");
+                }
+            });
+        });
+        $("#rec_no2").click(function () {
+            $("#recognize2").hide();
+            $("#blur").hide();
         });
         $("#cancel").click(function () {
+            $("#blur").hide();
             $("#room_update").hide();
         });
         $("#add").click(function () {
@@ -415,6 +439,56 @@ $(document).on("click","#reserve_item>tbody>tr",function(){
                }
            })
 
+        });
+        $("#update_staff").click(function () {
+            $("#blur").show();
+            $("#recognize").show();
+        });
+        $("#add_staff_no").click(function () {
+            $("#blur").hide();
+            $("#add_staff").hide();
+        });
+        $("#add_staff_yes").click(function () {
+            $.post("add_staff",{staff_id:$("#sta_id").val(),staff_pwd:$("#sta_pwd").val(),staff_auth:$("#staff_auth").val()},function (data) {
+                if(data["info"]==1)
+                {
+                    alert("成功！");
+                    $("#sta_id").val("");
+                    $("#sta_pwd").val("");
+                }
+                else if(data["info"]==2)
+                {
+                    alert("账号已存在！");
+                    $("#sta_id").val("");
+                    $("#sta_pwd").val("");
+                }
+                else
+                {
+                    alert("请输入必填信息！");
+                }
+            })
+        });
+        $("#rec_yes").click(function () {
+            $.post("check_staff",{staff_id:$("#staff_id").val(),staff_pwd:$("#staff_pwd").val()},function (data) {
+                if(data["info"]==1)
+                {
+                    $("#add_staff").show();
+                    $("#recognize").hide();
+                }
+                else if(data["info"]==2)
+                {
+                    alert("没有权限进行操作！")
+                }
+                else
+                {
+                    alert("账户或密码错误！");
+                }
+            });
+
+        });
+        $("#rec_no").click(function () {
+            $("#recognize").hide();
+            $("#blur").hide();
         });
 });
 
